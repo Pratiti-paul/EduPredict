@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../components/Footer';
-import './Auth.css';
+import './Login.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -30,16 +30,16 @@ const Login = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <div className="auth-page" style={{ flex: 1 }}>
-                <div className="auth-wrapper">
-                    <div className="auth-visual">
+            <div className="login-page" style={{ flex: 1 }}>
+                <div className="login-wrapper">
+                    <div className="login-visual">
                         <img src="/hero-illustration.png" alt="EduPredict" />
                         <h2>Welcome Back</h2>
                         <p>Continue your journey to your dream college.</p>
                     </div>
-                    <div className="auth-form-container">
+                    <div className="login-form-container">
                         <h2>Login to Account</h2>
-                        <p className="auth-subtitle">Enter your credentials to access your dashboard.</p>
+                        <p className="login-subtitle">Enter your credentials to access your dashboard.</p>
                         
                         {error && <div className="error-message">{error}</div>}
 
@@ -73,7 +73,7 @@ const Login = () => {
                             <button type="submit" className="btn-primary">Login</button>
                         </form>
 
-                        <p className="auth-redirect">
+                        <p className="login-redirect">
                             Don't have an account? <Link to="/signup">Sign Up</Link>
                         </p>
                     </div>

@@ -1,0 +1,132 @@
+.how-it-works-container {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.how-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.how-header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.how-header p {
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.step-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    background: var(--primary-gradient);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+.step-card h3 {
+    margin: 20px 0 15px;
+    font-size: 24px;
+}
+
+.step-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.detailed-section {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    background: #fff9f0;
+    padding: 80px;
+    border-radius: 50px;
+}
+
+.detailed-image {
+    flex: 1;
+}
+
+.detailed-image img {
+    width: 100%;
+}
+
+.detailed-text {
+    flex: 1.2;
+}
+
+.detailed-text h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.detailed-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-list li {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+@media (max-width: 992px) {
+    .steps-grid {
+        grid-template_columns: 1fr;
+    }
+
+    .detailed-section {
+        flex-direction: column;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .feature-list {
+        align_items: center;
+    }
+}

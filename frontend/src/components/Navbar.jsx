@@ -7,6 +7,8 @@ const Navbar = () => {
     const location = useLocation();
     const [user, setUser] = useState(null);
 
+    const [showDropdown, setShowDropdown] = useState(false);
+
     useEffect(() => {
         const updateUserData = () => {
             const storedUser = localStorage.getItem('user');
@@ -18,7 +20,6 @@ const Navbar = () => {
         };
 
         updateUserData();
-        // Listen for storage changes in the same tab
         window.addEventListener('storage', updateUserData);
         return () => window.removeEventListener('storage', updateUserData);
     }, [location]);
@@ -26,8 +27,11 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('user');
         setUser(null);
+        setShowDropdown(false);
         navigate('/login');
     };
+
+    const toggleDropdown = () => setShowDropdown(!showDropdown);
 
     const isActive = (path) => location.pathname === path;
 
@@ -42,18 +46,37 @@ const Navbar = () => {
                 <div className="navbar-menu">
                     <div className="navbar-links">
                         <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>Home</Link>
-                        <a href="#">Features</a>
-                        <a href="#">How It Works</a>
-                        <a href="#">Contact</a>
+                        <Link to="/predictor" className={isActive('/predictor') ? 'active' : ''}>College Predictor</Link>
+                        <Link to="/how-it-works" className={isActive('/how-it-works') ? 'active' : ''}>How It Works</Link>
+                        <Link to="/about" className={isActive('/about') ? 'active' : ''}>About Us</Link>
                     </div>
                     
                     <div className="navbar-actions">
                         {user ? (
-                            <div className="user-profile">
-                                <div className="user-avatar">
-                                    {user.fullName ? user.fullName[0].toUpperCase() : 'U'}
+                            <div className="user-profile-wrapper">
+                                <div className="user-profile" onClick={toggleDropdown}>
+                                    <div className="user-avatar">
+                                        {user.fullName ? user.fullName[0].toUpperCase() : 'U'}
+                                    </div>
+                                    <span className="dropdown-arrow">▼</span>
                                 </div>
-                                <button onClick={handleLogout} className="logout-btn">Logout</button>
+                                
+                                {showDropdown && (
+                                    <div className="profile-dropdown">
+                                        <div className="dropdown-header">
+                                            <p className="user-name">{user.fullName}</p>
+                                            <p className="user-email">{user.email}</p>
+                                        </div>
+                                        <div className="dropdown-divider"></div>
+                                        <Link to="/profile" className="dropdown-item" onClick={() => setShowDropdown(false)}>
+                                            <span className="item-icon">👤</span> Profile
+                                        </Link>
+                                        <div className="dropdown-divider"></div>
+                                        <button onClick={handleLogout} className="dropdown-item logout-item">
+                                            <span className="item-icon">🚪</span> Logout
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         ) : (
                             <>

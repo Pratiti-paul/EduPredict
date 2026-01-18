@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../components/Footer';
-import './Auth.css';
+import './Signup.css';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -31,16 +31,16 @@ const Signup = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            <div className="auth-page" style={{ flex: 1 }}>
-                <div className="auth-wrapper">
-                    <div className="auth-visual">
+            <div className="signup-page" style={{ flex: 1 }}>
+                <div className="signup-wrapper">
+                    <div className="signup-visual">
                         <img src="/hero-illustration.png" alt="EduPredict" />
                         <h2>Join EduPredict</h2>
                         <p>Unlock your future with accurate college predictions.</p>
                     </div>
-                    <div className="auth-form-container">
+                    <div className="signup-form-container">
                         <h2>Create Your Account</h2>
-                        <p className="auth-subtitle">Sign up to access the college predictor dashboard.</p>
+                        <p className="signup-subtitle">Sign up to access the college predictor dashboard.</p>
                         
                         {error && <div className="error-message">{error}</div>}
 
@@ -100,7 +100,7 @@ const Signup = () => {
                             <button type="submit" className="btn-primary">Sign Up</button>
                         </form>
 
-                        <p className="auth-redirect">
+                        <p className="signup-redirect">
                             Already have an account? <Link to="/login">Login</Link>
                         </p>
                     </div>
