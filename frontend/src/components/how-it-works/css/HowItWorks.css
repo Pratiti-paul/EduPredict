@@ -1,0 +1,298 @@
+/* Existing CSS content */
+.hiw-section {
+    padding: 100px 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    overflow: hidden;
+}
+
+.hiw-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.hiw-header {
+    margin-bottom: 80px;
+}
+
+.hiw-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+}
+
+.hiw-subtitle {
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 80px;
+    /* Added spacing for next section */
+}
+
+/* Horizontal Line (Desktop) */
+.timeline-line {
+    position: absolute;
+    top: 55px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, #ffe0b2 0%, #ffcc80 50%, #ffe0b2 100%);
+    z-index: 0;
+}
+
+.timeline-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 15px;
+}
+
+/* Step Badge (01, 02...) */
+.step-badge {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ff8c00;
+    background: #fff3e0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeDown 0.6s ease-out forwards;
+}
+
+/* Icon Circle */
+.step-icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border: 2px solid #fff3e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.1);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    opacity: 0;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.timeline-step:hover .step-icon-circle {
+    transform: translateY(-5px) scale(1.05);
+    border-color: #ff8c00;
+    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.2);
+}
+
+/* Content */
+.step-content {
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.step-desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Staggered Animations */
+.timeline-step:nth-child(1) .step-badge,
+.timeline-step:nth-child(1) .step-icon-circle,
+.timeline-step:nth-child(1) .step-content {
+    animation-delay: 0s;
+}
+
+.timeline-step:nth-child(2) .step-badge,
+.timeline-step:nth-child(2) .step-icon-circle,
+.timeline-step:nth-child(2) .step-content {
+    animation-delay: 0.15s;
+}
+
+.timeline-step:nth-child(3) .step-badge,
+.timeline-step:nth-child(3) .step-icon-circle,
+.timeline-step:nth-child(3) .step-content {
+    animation-delay: 0.3s;
+}
+
+.timeline-step:nth-child(4) .step-badge,
+.timeline-step:nth-child(4) .step-icon-circle,
+.timeline-step:nth-child(4) .step-content {
+    animation-delay: 0.45s;
+}
+
+
+/* Why This Works Section */
+.why-this-works {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.wtw-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.wtw-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.wtw-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.wtw-bullets li {
+    font-size: 12px;
+    color: #777;
+    position: relative;
+    padding-left: 15px;
+}
+
+.wtw-bullets li::before {
+    content: "•";
+    color: #ff8c00;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+/* Animations Keyframes */
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .timeline-line {
+        width: 2px;
+        height: 80%;
+        left: 35px;
+        top: 20px;
+        background: linear-gradient(180deg, #ffe0b2 0%, #ffcc80 50%, #ffe0b2 100%);
+    }
+
+    .timeline-steps {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .timeline-step {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .step-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        font-size: 12px;
+        padding: 2px 8px;
+    }
+
+    .step-icon-circle {
+        margin-right: 20px;
+        margin-bottom: 0;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+
+    .step-content {
+        padding-top: 8px;
+        text-align: left;
+    }
+
+    .step-desc {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .wtw-bullets {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

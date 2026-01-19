@@ -50,31 +50,7 @@ const Dashboard = () => {
                     </div>
                 </header>
 
-                {/* How It Works */}
-                <section className="how-it-works">
-                    <div className="container">
-                        <div className="section-header">
-                            <h2 className="section-title">How It Works</h2>
-                            <p className="section-subtitle">Predict your college admission in three simple steps.</p>
-                        </div>
-
-                        <div className="steps-container">
-                            {[
-                                { icon: '📝', title: '1. Enter Your Details', desc: 'Provide your exam scores, category, state preferences and more.' },
-                                { icon: '📱', title: '2. Get Predictions', desc: 'Our advanced algorithm analyzes your data to predict the best fit colleges.' },
-                                { icon: '📋', title: '3. View Results', desc: 'See a personalized list of colleges with admission chances.' }
-                            ].map((step, idx) => (
-                                <div key={idx} className="step-card">
-                                    <div className="step-icon-wrapper">
-                                        {step.icon}
-                                    </div>
-                                    <h3>{step.title}</h3>
-                                    <p>{step.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                {/* How It Works Section Removed */}
 
                 {/* Recent Predictions Section */}
                 <section className="recent-predictions">
