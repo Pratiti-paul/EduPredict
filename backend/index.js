@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
+const predictRoutes = require('./routes/predict');
+
 
 dotenv.config();
 
@@ -25,6 +27,8 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use("/api", predictRoutes);
+
 
 app.get('/', (req, res) => {
     res.send('EduPredict API is running');
