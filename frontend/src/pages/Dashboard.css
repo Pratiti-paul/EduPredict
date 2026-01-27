@@ -1,5 +1,5 @@
 .dashboard-page {
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,8 @@
 
 /* Hero Section Updates */
 .dashboard-hero {
-    background: #fff;
+    background: var(--white);
+    /* Dark Grey */
     padding: 60px 0 80px;
     position: relative;
     overflow: hidden;
@@ -17,11 +18,13 @@
 .dashboard-hero .hero-title {
     font-size: 48px;
     margin-bottom: 16px;
+    color: var(--text-dark);
 }
 
 .dashboard-hero .hero-description {
     font-size: 18px;
     margin-bottom: 30px;
+    color: var(--text-light);
 }
 
 /* Main Grid Layout */
@@ -41,7 +44,7 @@
 .section-small-title {
     font-size: 18px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-dark);
     margin-bottom: 20px;
 }
 
@@ -67,7 +70,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 12px rgba(74, 59, 82, 0.03);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     border: 1px solid #f0f0f0;
@@ -76,18 +79,19 @@
 
 .action-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border-color: #ffe0b2;
+    box-shadow: 0 8px 20px rgba(230, 62, 140, 0.1);
+    border-color: #ffdeeb;
 }
 
 .action-icon {
     font-size: 24px;
+    color: var(--primary);
 }
 
 .action-card span:last-child {
     font-size: 13px;
     font-weight: 600;
-    color: #555;
+    color: var(--text-dark);
 }
 
 /* Recent Predictions */
@@ -120,7 +124,7 @@
     border-radius: 16px;
     padding: 20px;
     border: 1px solid #eee;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 12px rgba(74, 59, 82, 0.02);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -136,12 +140,12 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 4px;
-    color: #333;
+    color: var(--text-dark);
 }
 
 .prediction-date {
     font-size: 12px;
-    color: #888;
+    color: var(--text-light);
 }
 
 .chance-badge {
@@ -177,7 +181,7 @@
 
 .detail-label {
     font-size: 11px;
-    color: #777;
+    color: var(--text-light);
     display: block;
     margin-bottom: 2px;
 }
@@ -185,7 +189,7 @@
 .detail-value {
     font-size: 13px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-dark);
 }
 
 .view-btn-text {
@@ -216,16 +220,18 @@
 .empty-icon {
     font-size: 40px;
     margin-bottom: 16px;
+    color: var(--primary);
 }
 
 .empty-state h3 {
     font-size: 18px;
     margin-bottom: 8px;
+    color: var(--text-dark);
 }
 
 .empty-state p {
     font-size: 14px;
-    color: #777;
+    color: var(--text-light);
     margin-bottom: 24px;
 }
 
@@ -251,7 +257,7 @@
     background: #fff;
     padding: 24px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 12px rgba(74, 59, 82, 0.03);
     border: 1px solid #f0f0f0;
 }
 
@@ -259,7 +265,7 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #1a1a1a;
+    color: var(--text-dark);
     border-bottom: 1px solid #f5f5f5;
     padding-bottom: 12px;
 }
@@ -273,19 +279,19 @@
 }
 
 .snapshot-row .label {
-    color: #777;
+    color: var(--text-light);
 }
 
 .snapshot-row .value {
     font-weight: 600;
-    color: #333;
+    color: var(--text-dark);
 }
 
 .edit-profile-btn {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
-    background: #fdf6e7;
+    background: #333;
     color: var(--primary);
     border: none;
     border-radius: 8px;
@@ -296,7 +302,7 @@
 }
 
 .edit-profile-btn:hover {
-    background: #fff0d6;
+    background: #444;
 }
 
 /* Prediction Stats */

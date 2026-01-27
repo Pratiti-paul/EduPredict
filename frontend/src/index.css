@@ -1,17 +1,25 @@
 :root {
-  --primary: #ff8c00;
-  --primary-gradient: linear-gradient(90deg, #ff8c00 0%, #ff5722 100%);
-  --primary-hover: #e67e22;
-  --bg-light: #fffcf5;
-  --header-bg: linear-gradient(to right, #f2994a, #f2c94c);
-  --text-dark: #333333;
-  --text-light: #757575;
-  --text-white: #ffffff;
-  --white: #ffffff;
-  --glass-bg: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+  /* Dark Mode Palette (Red/Black) */
+  --primary: #FF0000;
+  /* Bright Red */
+  --primary-gradient: linear-gradient(135deg, #FF5722 0%, #FF0000 100%);
+  /* Orange to Red */
+  --primary-hover: #D50000;
+  --bg-light: #221F1F;
+  /* Dark Background */
+  --header-bg: #1a1a1a;
+  /* Dark Header */
+  --text-dark: #FFFFFF;
+  /* White Text (Primary) */
+  --text-light: #B0B0B0;
+  /* Light Grey Text */
+  --text-white: #FFFFFF;
+  --white: #2d2d2d;
+  /* Re-purposed as Card Background (Dark Grey) */
+  --glass-bg: rgba(45, 45, 45, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.5);
   --radius-lg: 20px;
   --radius-md: 10px;
   --font-main: 'Outfit', 'Inter', system-ui, sans-serif;
@@ -25,7 +33,7 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--white);
+  background-color: var(--bg-light);
   color: var(--text-dark);
   min-height: 100vh;
   line-height: 1.6;
@@ -62,7 +70,7 @@ ul {
   border-radius: var(--radius-md);
   font-weight: 600;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
   display: inline-block;
   text-align: center;
   border: none;
@@ -70,40 +78,41 @@ ul {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
 }
 
 .btn-secondary {
-  background: #fdf6e7;
-  color: #8b572a;
+  background: #333;
+  color: #ff5722;
   padding: 14px 28px;
   border-radius: var(--radius-md);
   font-weight: 600;
-  border: 1px solid #ffe8cc;
+  border: 1px solid #444;
   transition: background 0.2s;
   display: inline-block;
   text-align: center;
 }
 
 .btn-secondary:hover {
-  background: #fff0d6;
+  background: #444;
 }
 
 .input-field {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #444;
   border-radius: var(--radius-md);
   margin-bottom: 16px;
   font-size: 16px;
   transition: border-color 0.2s;
-  background-color: #fafafa;
+  background-color: #333;
+  color: var(--text-dark);
 }
 
 .input-field:focus {
   outline: none;
   border-color: var(--primary);
-  background-color: var(--white);
+  background-color: #444;
 }
 
 .label {
@@ -118,5 +127,5 @@ ul {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   padding: 30px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #3d3d3d;
 }

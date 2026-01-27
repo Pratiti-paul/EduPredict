@@ -97,7 +97,8 @@
 }
 
 .footer-bottom {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.3);
+    /* Darker overlay */
     padding: 40px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
